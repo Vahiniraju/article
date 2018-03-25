@@ -3,12 +3,18 @@
   <head>
   <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" type="css/text" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= render 'layouts/shim' %>
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'layouts/header' %>
+    <div class="container">
+          <%= yield %>
+    </div>
+    <%= render 'layouts/footer' %>
   </body>
+
+
 </html>
